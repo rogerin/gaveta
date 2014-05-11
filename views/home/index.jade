@@ -1,0 +1,70 @@
+
+div(class="row")
+	div(class="col-lg-6")
+		h3= t('app.home.table1.titulo')
+		table(class="table table-striped")
+			thead
+				tr
+					th= t('app.home.table1.th1')
+					th= t('app.home.table1.th2')
+					th= t('app.home.table1.th3')
+			tbody
+				tr
+					td São Bras
+					td 50
+					td 50%
+				tr
+					td Padre Cicero
+					td 30
+					td 30%
+				tr
+					td Uvas Ching Ling
+					td 10
+					td 10%
+				tr
+					td Vinho Branco
+					td 5
+					td 5%
+				tr
+					td Vinha Quase Dolly
+					td 5
+					td 5%
+		div(class="pull-right")
+			a(href="#", class="btn btn-success btn-xs")= t('app.lista_completa')
+	div(class="col-lg-6")
+		h3= t('app.home.table2.titulo')
+		table(class="table table-striped")
+			thead
+				tr
+					th= t('app.home.table2.th1')
+					th= t('app.home.table2.th2')
+					th= t('app.home.table2.th3')
+			tbody
+				tr
+					td São Bras
+					td 20m
+					td 2:40:24h
+				tr
+					td Padre Cicero
+					td 10m
+					td 2:40:24h
+				tr
+					td Uvas Ching Ling
+					td 4m
+					td 2:40:24h
+				tr
+					td Vinho Branco
+					td 5m
+					td 2:40:24h
+				tr
+					td Vinha Quase Dolly
+					td 5m
+					td 2:40:24h
+		div(class="pull-right")
+			a(href="#", class="btn btn-success btn-xs")= t('app.lista_completa')
+div(class="row")
+	div(class="col-lg-12")
+		h3= t('app.home.table3.titulo')
+		include ../vinhos/lista
+		div(class="pull-right")
+			a(href="#", class="btn btn-success btn-xs")= t('app.lista_completa')

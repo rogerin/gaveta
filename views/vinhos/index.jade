@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+	div(class="row")
+		h2 Vinhos
+		p Lista dos vinhos cadastrados no nosso sistema.
+	div(class="row")
+		div(class="pull-left")
+			div(class="btn-toolbar")
+				a(href="#", class="btn btn-default") Novo Vinho
+		
+		div(class="pull-right")
+			form(class="form-inline" role="form")
+				div(class="form-group")
+					input(type="text", class="form-control", placeholder="Digite o nome de um vinho")
+	div(class="row")
+		div(class="pull-right")
+			ul(class="pagination pagination-sm")
+				li(class="disabled")
+					a(href="#") «
+				li(class="active")
+					a(href="#") 1
+				li
+					a(href="#") 2
+				li
+					a(href="#") 3
+				li
+					a(href="#") 4
+				li
+					a(href="#") »
+	div(class="row")
+		include lista
+	div(class="row")
+		div(class="pull-right")
+			ul(class="pagination pagination-sm")
+				li(class="disabled")
+					a(href="#") «
+				li(class="active")
+					a(href="#") 1
+				li
+					a(href="#") 2
+				li
+					a(href="#") 3
+				li
+					a(href="#") 4
+				li
+					a(href="#") »
