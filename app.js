@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 
 load('models').then('controllers').then('routes').into(app);
 
-var port = Number(process.env.PORT || 3000);
+var port = Number(process.env.PORT || 5000);
 app.listen(port, function(){
 	console.log('Iniciando na porta: ' + port +' ');
 });
