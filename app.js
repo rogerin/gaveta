@@ -4,7 +4,9 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	app = express();
 
-mongoose.connect('mongodb://localhost/gaveta', function(err){
+//mongoose.connect('mongodb://localhost/gaveta', function(err){
+mongoose.connect('mongodb://rogerio:yolanda@mongo.onmodulus.net:27017/un3uhoQo', function(err){
+	
 	if( err ) {
 		console.log("Error conectar mongo db: " + err);
 	} else {
