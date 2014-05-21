@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+	div(class="row")
+		h2 Gaveta
+		p Gadastre suas gavetas, depositos, caixas.. dê um nome para elas.
+	hr
+	div(class="row")
+		form(class="form-horizontal", role="form", method="POST", action="/gavetas")
+			div(class="form-group")
+				label(for="gaveta_nome", class="col-sm-2 control-label") Gaveta (deposito/caixa):
+				div(class="col-sm-10")
+					input(type="text" class="form-control" id="gaveta_nome" placeholder="Digite o nome para sua gaveta", name="nome")
+			div(class="form-group")
+				div(class="col-sm-offset-2 col-sm-10")
+					button(type="submit", class="btn btn-success") Cadastrar
+	div(class="row")
+		h3 Gavetas Cadastradas
+		if gavetas
+			table(class="table table-condensed table-striped")
+				thead
+					tr
+						th Nome
+						th Criado em
+				tbody
+					each item in gavetas
+						tr
+							td #{item.nome}
+							td #{item.created_at}
+		else
+			h4 Nenhum cadastro.

@@ -5,6 +5,5 @@ var HomeController = {
 		res.render('index');
 	}
 }
-
 	return HomeController;
 }

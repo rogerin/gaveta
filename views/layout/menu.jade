@@ -1,7 +1,7 @@
 div(class="navbar navbar-default navbar-fixed-top")
 	div(class="container")
 		div(class="navbar-header")
-			a(href="/", class="navbar-brand")= t('app.sistema.nome') + ' ' + t('app.sistema.versao')
+			a(href="/", class="navbar-brand") Gaveta
 			button(class="navbar-toggle", type="button", data-toggle="collapse",data-target="#navbar-main")
 				span(class="icon-bar")
 				span(class="icon-bar")
@@ -9,25 +9,32 @@ div(class="navbar navbar-default navbar-fixed-top")
 		div(class="navbar-collapse collapse", id="navbar-main")
 			ul(class="nav navbar-nav")
 				li(class="dropdown")
-					a(href="/")= t('app.menu.principal') 
+					a(href="/") Principal 
 				li(class="dropdown")
-					a(href="#", class="dropdown-toggle", data-toggle="dropdown", id="vinhos")= t('app.menu.vinhos.titulo')
+					a(href="#", class="dropdown-toggle", data-toggle="dropdown", id="gavetas") Gavetas
 						span(class="caret")
 					ul(class="dropdown-menu", aria-labelledby="vinhos")
 						li
-							a(href="/vinhos")= t('app.menu.vinhos.listar')
+							a(href="/gavetas") Cadastrar
 						li
-							a(href="/vinho/novo")= t('app.menu.vinhos.cadastrar')
+							a(href="/gaveta/novo") Relatorio
+							
 				li(class="dropdown")
-					a(href="#")= t('app.menu.relatorios')
+					a(href="#", class="dropdown-toggle", data-toggle="dropdown", id="componentes") Componentes/Itens
+						span(class="caret")
+					ul(class="dropdown-menu", aria-labelledby="vinhos")
+						li
+							a(href="/componente/cadastrar") Cadastrar Novo
+						li
+							a(href="/componentes") Listar
+							
+				li(class="dropdown")
+					a(href="#") bla
 			ul(class="nav navbar-nav navbar-right")
 				li(class="dropdown")
-					a(href="#", class="dropdown-toggle", data-toggle="dropdown", id="vinhos")= t('app.menu.configuracoes.titulo')
+					a(href="#", class="dropdown-toggle", data-toggle="dropdown", id="vinhos") bla
 						span(class="caret")
 					ul(class="dropdown-menu", aria-labelledby="vinhos")
 						li
-							a(href="#")= t('app.menu.configuracoes.dados')
-						li
-							a(href="/tags")= t('app.menu.configuracoes.cad_tag')
-						li
-							a(href="/logout")= t('app.menu.configuracoes.logout')
+							a(href="#") blabla
+						

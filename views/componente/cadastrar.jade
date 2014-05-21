@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+	div(class="row")
+		h2 Componente
+		p Gadastre seus componentes, itens, etc.. Selecione o local onde você está quardando seu item para facilitar para você quando for procura-lo.
+	hr
+	div(class="row")
+		form(class="form-horizontal", role="form", method="POST", action="/componente")
+			div(class="form-group")
+				label(for="componente_nome", class="col-sm-2 control-label") Componente/item:
+				div(class="col-sm-10")
+					input(type="text" class="form-control" id="componente_nome" placeholder="Digite o nome ou componente/item.", name="nome")
+						
+			div(class="form-group")
+				label(for="componente_quantidade", class="col-sm-2 control-label") Quantidade:
+				div(class="col-sm-10")
+					input(type="number" class="form-control" id="componente_quantidade" placeholder="Quantos desse item você tem no seu 'estoque'?", name="quantidade")
+						
+			div(class="form-group")
+				label(for="componente_referencia", class="col-sm-2 control-label") Modelo/Referencia:
+				div(class="col-sm-10")
+					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="referencia")
+
+			div(class="form-group")
+				label(for="componente_descricao", class="col-sm-2 control-label") Descrição/Detalhes:
+				div(class="col-sm-10")
+					textarea(class="form-control" id="componente_descricao" placeholder="Detalhes.", name="descricao")
+			div(class="form-group")
+				label(for="componente_datasheet", class="col-sm-2 control-label") Link Datasheet:
+				div(class="col-sm-10") Breve opção de upload do arquivo para criação do acervo pessoal.
+					input(type="text" class="form-control" id="componente_datasheet" placeholder="Link para Datasheet", name="link_datasheet")
+
+
+			if gavetas	
+				div(class="form-group")
+					label(for="componente_gaveta", class="col-sm-2 control-label") Você vai guardar ele onde?
+					div(class="col-sm-10")
+						select(class="form-control", name="gaveta")
+							option(selected) Selecione a "gaveta", onde você está guardando esse item.
+							each item in gavetas
+								option(value="#{item._id}") #{item.nome}
+			else 
+				div(class="form-group")
+					label(class="col-sm-2 control-label")
+					div(class="col-sm-10") Nenhuma Gaveta cadastrada.
+
+			div(class="form-group")
+				div(class="col-sm-offset-2 col-sm-10")
+					button(type="submit", class="btn btn-success") Cadastrar
