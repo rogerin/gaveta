@@ -1,0 +1,64 @@
+<div class="row">
+	<h2>Componente</h2>
+	<p> Gadastre seus componentes, itens, etc.. Selecione o local onde você está quardando seu item para facilitar para você quando for procura-lo. </p>
+	<hr />
+</div>
+<div class="row"> 
+	<div class="alert alert-danger" ng-show="form_componente.nome.$error.required">
+		Nome obrigatório.
+	</div>
+
+	<form class="form-horizontal" role="form" name="form_componente">
+		<div class="form-group">
+			<label for="componente_nome", class="col-sm-2 control-label"> Nome do Componente/item: </label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="componente_nome" placeholder="Digite o nome ou componente/item." name="nome" data-ng-model="componente.nome" required />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="componente_quantidade", class="col-sm-2 control-label"> Quantidade: </label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="componente_quantidade" placeholder="Diga quantos itens você tem." name="quantidade" data-ng-model="componente.quantidade"  />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="componente_referencia", class="col-sm-2 control-label"> Referencia/Modelo: </label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="referencia" placeholder="Referencia ou modelo, ex.: PCF8574" name="referencia" data-ng-model="componente.referencia"  />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="componente_descricao", class="col-sm-2 control-label"> Descricao: </label>
+			<div class="col-sm-10">
+				<textarea class="form-control" id="descicao" placeholder="Descreva o que esse componente é capaz de fazer." name="descicao" data-ng-model="componente.descricao" ></textarea>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="componente_link_datasheet", class="col-sm-2 control-label"> Link do Datasheet: </label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="link_datasheet" placeholder="Link do datasheet." name="link_datasheet" data-ng-model="componente.link_datasheet"  />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="componente_gaveta", class="col-sm-2 control-label"> Onde você vai guardar? </label>
+			<div class="col-sm-10">
+				<select class="form-control" id="gaveta" name="_gaveta" data-ng-model="componente._gaveta">
+					<option class="form-control" ng-repeat="gaveta in gavetas" value="{{gaveta._id}}">{{gaveta.nome}}</option>
+				</select>
+			</div>
+		</div>
+
+						
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-success" data-ng-disabled="form_componente.$invalid" data-ng-click="cadastrarComponente()"> 	Cadastrar
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

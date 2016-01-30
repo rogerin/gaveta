@@ -12,6 +12,15 @@ module.exports = function(app){
 				}
 			});
 		},
+		listar: function(req,res){
+			Gaveta.find(function(err, gavetas){
+				if(err) {
+					console.log("Erro ao listar gavetas: " + err);
+				} else {
+					res.send(JSON.stringify(gavetas));
+				}
+			});
+		},
 		add: function(req,res){
 			new Gaveta({
 				nome: req.body.nome

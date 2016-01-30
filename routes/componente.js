@@ -4,9 +4,17 @@ module.exports = function(app){
 	app.route('/componente')
 	.get(componente.listar)
 	.post(componente.add);
-
 	app.route('/componente/cadastrar')
 	.get(componente.cadastrar);
 
+	app.route('/api/componentes')
+	.get(componente.listar);
+
+	app.route('/api/componente/cadastrar')
+	.post(componente.add);
+
+
+	app.route('/componente/:id')
+	.get(componente.buscaId)
 
 }

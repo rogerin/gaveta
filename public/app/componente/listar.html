@@ -1,0 +1,60 @@
+<h2>Lista de componentes cadastrados</h2>
+<div class="table-responsive" data-ng-show="true">
+	<input type="text" class="form-control" data-ng-model="busca" placeholder="Faça uma busca !!"/>
+
+	<table class="table table-condensed table-striped">
+		<thead>
+			<tr>
+				<th>Referencia</th>
+				<th>Quantidade</th>
+				<th>Gaveta</th>
+				<th>Link Datasheet</th>
+				<th>Criado em</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+		</thead>	
+		<tbody>
+			<tr ng-repeat="comp in componentes | filter : busca">
+				<td>{{ comp.nome }}</td>
+				<td>{{ comp.quantidade }}</td>
+				<td>{{ comp._gaveta.nome }}</td>
+				<td> 
+					<a href="{{comp.link_datasheet}}" target="_blank"> Datasheet </a>
+				</td>
+				<td>{{ comp.created_at | date : 'dd/MM/yy' }}</td>
+				<td></td>
+				
+				<td>
+					<div class="btn-group btn-group-sm">
+						<button type="button" class="btn btn-default" title="Visualizar" data-ng-click="visualizar(comp)">
+							<span class="glyphicon glyphicon-search">
+								Visualizar
+							</span>
+						</button>
+						<button type="button" class="btn btn-default" title="Editar" data-ng-click="editar(comp)">
+							<span class="glyphicon glyphicon-cog">
+								Editar
+							</span>
+						</button>
+						<button type="button" class="btn btn-default" title="Deletar" data-ng-click="deletar(comp)">
+							<span class="glyphicon glyphicon-trash">
+								Deletar
+							</span>
+						</button>
+						<button type="button" class="btn btn-default" title="Imprimir Tag">
+							<span class="glyphicon glyphicon-qrcode">
+								TAG
+							</span>
+						</button>
+						<button type="button" class="btn btn-default" title="Ativo">
+							<span class="glyphicon glyphicon-ok-sign">
+								Ativo
+							</span>
+						</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app="gaveta")
 	head
 		title Gaveta
 
@@ -10,10 +10,9 @@ html
 		include layout/menu
 		div(class="container")
 			block content
-		div(class="container")
-			include layout/footer
+		
 		script(type='text/javascript', src='/javascripts/jquery.js')
+		script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js')
+		script(type='text/javascript', src='https://code.angularjs.org/1.2.21/angular-route.min.js')
 		script(type='text/javascript', src='/bootstrap/js/bootstrap.min.js')
-		block javascript
-		
-		
+		script(type='text/javascript', src='/javascripts/angular/app.js')

@@ -9,12 +9,13 @@ module.exports = function(app){
 			.find()
 			.populate('_gaveta', 'nome') // only return the Persons name
 			.exec(function (err, componentes) {
-				console.dir(componentes);
-
 			  if (err) {
 			  	console.log(err);
+			  	res.send(err);
 			  } else {
-				  res.render('componente/listar', { componentes: componentes });
+				  //res.render('componente/listar', { componentes: componentes });
+				  res.json(componentes);
+				  //res.end();
 			  }
 			});
 		},
@@ -36,14 +37,33 @@ module.exports = function(app){
 				_gaveta: req.body.gaveta
 			}).
 			save(function(err){
-				if(err) { console.log("Erro ao cadastrar: " + err); }
+				if(err) { 
+					console.log("Erro ao cadastrar: " + err);
+					res.send(err);
+				}
 				else {
 					console.log("Cadastrado com sucesso.");
-					console.log("Componente: " + req.body.nome + " qtd: " + req.body.quantidade);
+					Componente
+					.find()
+					.populate('_gaveta', 'nome') // only return the Persons name
+					.exec(function (err, componentes) {
+					  if (err) {
+					  	console.log(err);
+					  	res.send(err);
+					  } else {
+						  //res.render('componente/listar', { componentes: componentes });
+						  res.json(componentes);
+						  //res.end();
+					  }
+					});
 				}
 			});
 
 			res.redirect('/componente');
+		},
+
+		buscaId: function(req,res){
+			console.dir(req.params.id);
 		}
 	}
 

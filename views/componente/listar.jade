@@ -3,53 +3,51 @@ extends ../layout
 block content
 	h3 Componetes
 	if componentes
-		table(class="table table-condensed table-striped")
-			thead
-				tr
-					th Nome
-					th Quantidade
-					th Referencia
-					th Gaveta
-
-					th Link Datasheet
-					th Criado em
-					th 
-					th 
-			tbody
-				each item in componentes
+		div(class="table-responsive")
+			table(class="table table-condensed table-striped")
+				thead
 					tr
-						td #{item.nome}
-						td #{item.quantidade}
-						td #{item.referencia}
-						td 
-							if item._gaveta
-								a(href="/componentes/gaveta/#{item._gaveta._id}") #{item._gaveta.nome}
-							else
-								span Ta sem gaveta!!
-						td #{item.link_datasheet}
+						th Referencia
+						//th Nome
+						th Quantidade
+						th Gaveta
+						th Link Datasheet
+						//th Criado em
+						th Status
+						th 
+				tbody
+					each item in componentes
+						tr
+							//td #{item.nome}
+							td #{item.referencia}
+							td #{item.quantidade}
+							td 
+								if item._gaveta
+									a(href="/componentes/gaveta/#{item._gaveta._id}") #{item._gaveta.nome}
+								else
+									span Ta sem gaveta!!
+							td 
+								a(href="#{item.link_datasheet}", target="_blank") Datasheet 
 
-						td #{item.created_at}
-						td
-							div(class="progress")
-								div(class="progress-bar", role="progressbar", aria-valuenow="50", aria-valuemin="0", aria-valuemax="100", style="width: 50%;")
-
-						td
-							div(class="btn-group")
-								button(type="button", class="btn btn-default btn-sm", title="Visualizar")
-									span(class="glyphicon glyphicon-search")
-										Visualizar
-								button(type="button", class="btn btn-default btn-sm", title="Editar")
-									span(class="glyphicon glyphicon-cog")
-										Editar
-								button(type="button", class="btn btn-default btn-sm", title="Deletar")
-									span(class="glyphicon glyphicon-trash")
-										Deletar
-								button(type="button", class="btn btn-default btn-sm", title="Imprimir Tag")
-									span(class="glyphicon glyphicon-qrcode")
-										TAG
-								button(type="button", class="btn btn-info btn-sm", title="Ativo")
-									span(class="glyphicon glyphicon-ok-sign")
-										Ativo
+							//td #{item.created_at}
+							td Guardado
+							td
+								div(class="btn-group btn-group-sm")
+									button(type="button", class="btn btn-default", title="Visualizar")
+										span(class="glyphicon glyphicon-search")
+											Visualizar
+									button(type="button", class="btn btn-default", title="Editar")
+										span(class="glyphicon glyphicon-cog")
+											Editar
+									button(type="button", class="btn btn-default", title="Deletar")
+										span(class="glyphicon glyphicon-trash")
+											Deletar
+									button(type="button", class="btn btn-default", title="Imprimir Tag")
+										span(class="glyphicon glyphicon-qrcode")
+											TAG
+									button(type="button", class="btn btn-info", title="Ativo")
+										span(class="glyphicon glyphicon-ok-sign")
+											Ativo
 
 	else
 		h4 Nenhum cadastro.
