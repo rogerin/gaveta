@@ -6,8 +6,8 @@ var bodyParser 	= require('body-parser');
 var mongoose 	= require('mongoose');
 var app 		= express();
 
-mongoose.connect('mongodb://localhost/gaveta', function(err){
-//mongoose.connect('mongodb://rogerio:yolanda@mongo.onmodulus.net:27017/un3uhoQo', function(err){
+//mongoose.connect('mongodb://localhost/gaveta', function(err){
+mongoose.connect('mongodb://nonumbers:nonumbers@ds153412.mlab.com:53412/nonumbers', function(err){
 	if( err ) {
 		console.log("Error conectar mongo db: " + err);
 	} else {
@@ -19,7 +19,8 @@ var db = mongoose.connect;
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
@@ -36,7 +37,7 @@ load('models').then('controllers').then('routes').into(app);
 */
 
 //var port = Number(process.env.PORT || 5001);
-app.listen(1000, function(){
+app.listen(3000, function(){
 //	console.log('Iniciando na porta: ' + port +' ');
 });
 
