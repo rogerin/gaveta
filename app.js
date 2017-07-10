@@ -37,8 +37,12 @@ load('models').then('controllers').then('routes').into(app);
 */
 
 //var port = Number(process.env.PORT || 5001);
-app.listen(3000, function(){
-//	console.log('Iniciando na porta: ' + port +' ');
+// app.listen(3000, function(){
+// //	console.log('Iniciando na porta: ' + port +' ');
+// });
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log('listening on', http.address().port);
 });
 
 

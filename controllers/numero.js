@@ -27,40 +27,19 @@ module.exports = function(app){
 
 		},
 		add: function(req,res){
-			res.json(req.body)
-			// new Numero({
-			// 	nome: req.body.nome,
-			// 	quantidade: req.body.quantidade,
-			// 	referencia: req.body.referencia,
-			// 	descricao: req.body.descricao,
-			// 	link_datasheet: req.body.link_datasheet,
-			// 	gaveta_nome: '',
-			// 	_gaveta: req.body.gaveta
-			// }).
-			// save(function(err){
-			// 	if(err) {
-			// 		console.log("Erro ao cadastrar: " + err);
-			// 		res.send(err);
-			// 	}
-			// 	else {
-			// 		console.log("Cadastrado com sucesso.");
-			// 		Componente
-			// 		.find()
-			// 		.populate('_gaveta', 'nome') // only return the Persons name
-			// 		.exec(function (err, componentes) {
-			// 		  if (err) {
-			// 		  	console.log(err);
-			// 		  	res.send(err);
-			// 		  } else {
-			// 			  //res.render('componente/listar', { componentes: componentes });
-			// 			  res.json(componentes);
-			// 			  //res.end();
-			// 		  }
-			// 		});
-			// 	}
-			// });
 
-			//res.redirect('/numeros/cadastrar');
+			new Numero(req.body).
+			save(function(err){
+				if(err) {
+					console.log("Erro ao cadastrar: " + err);
+					res.send(err);
+				}
+				else {
+					res.redirect('/numeros/cadastrar');
+				}
+			});
+
+
 		},
 
 		buscaId: function(req,res){
