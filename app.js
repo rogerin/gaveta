@@ -42,7 +42,7 @@ load('models').then('controllers').then('routes').into(app);
 // });
 
 app.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
+  console.log('listening on');
 });
 
 
