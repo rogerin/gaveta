@@ -1,6 +1,6 @@
 module.exports = function(app){
 
-	var Componente = app.models.numeros;
+	var Numero = app.models.numeros;
 	var Gaveta = app.models.gavetas;
 
 	var ComponenteController = {
