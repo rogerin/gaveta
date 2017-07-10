@@ -5,16 +5,16 @@ module.exports = function(app){
 
 	var ComponenteController = {
 		listar: function(req,res){
-			Componente
+			Numero
 			.find()
-			.populate('_gaveta', 'nome') // only return the Persons name
-			.exec(function (err, componentes) {
+			//.populate('_gaveta', 'nome') // only return the Persons name
+			.exec(function (err, numeros) {
 			  if (err) {
 			  	console.log(err);
 			  	res.send(err);
 			  } else {
 				  //res.render('componente/listar', { componentes: componentes });
-				  res.json(componentes);
+				  res.json(numeros);
 				  //res.end();
 			  }
 			});
