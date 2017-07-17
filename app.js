@@ -5,6 +5,7 @@ var load 		= require('express-load');
 var bodyParser 	= require('body-parser');
 var mongoose 	= require('mongoose');
 var app 		= express();
+var cors 				= require('cors');
 
 //mongoose.connect('mongodb://localhost/gaveta', function(err){
 mongoose.connect('mongodb://nonumbers:nonumbers@ds153412.mlab.com:53412/nonumbers', function(err){
@@ -23,6 +24,7 @@ app.set('view engine', 'jade');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
+app.use(cors());
 
 
 load('models').then('controllers').then('routes').into(app);
