@@ -27,17 +27,50 @@ module.exports = function(app){
 
 		},
 		add: function(req,res){
+			let numeros = new Numero();
 
-			new Numero(req.body).
-			save(function(err){
-				if(err) {
-					console.log("Erro ao cadastrar: " + err);
-					res.send(err);
-				}
-				else {
-					res.redirect('/numeros/cadastrar');
-				}
-			});
+			let nome_lista 			= req.body.nome_lista;
+			let num_lista 			= req.body.num_lista;
+			let showgeo_lista 	= req.body.showgeo_lista;
+			let latitude_lista 	= req.body.latitude_lista;
+			let longitude_lista = req.body.longitude_lista;
+			let km_lista 				= req.body.km_lista;
+
+			numeros.nome 	= req.body.nome;
+			numeros.num 	= req.body.num;
+			numeros.lista = req.body.lista;
+
+			for (let i = 0; i < showgeo_lista.length; i++) {
+				numeros.list.push(
+					{
+						nome: nome_lista[i],
+						desc: String,
+						num: num_lista[i],
+						gps: { lat: latitude_lista[i], lon: longitude_lista[i] },
+						showLat: Boolean(showgeo_lista[i]) || false,
+						km: km_lista[i]
+					}
+				)
+			}
+
+			//res.json(numeros);
+
+			numeros.save(function(err, results){
+				res.redirect('/numeros/listar');
+			})
+
+
+
+			// new Numero(req.body).
+			// save(function(err){
+			// 	if(err) {
+			// 		console.log("Erro ao cadastrar: " + err);
+			// 		res.send(err);
+			// 	}
+			// 	else {
+			// 		res.redirect('/numeros/cadastrar');
+			// 	}
+			// });
 
 
 		},

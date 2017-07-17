@@ -24,233 +24,27 @@ block content
 	
 	div(class="row")
 		form(class="form-horizontal", role="form", method="POST", action="/numeros", name="form_componente")
-			div(class="form-group col-sm-6")
-				label(for="componente_nome", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_nome" placeholder="Digite o nome.", name="nome", data-ng-model="nome" )
-						
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="number" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="num")
+			div(class="col-sm-12")
+				div(class="form-group col-sm-12")
+					label(for="componente_nome", class="col-sm-2 control-label") Nome:
+					div(class="col-sm-10")
+						input(type="text", class="form-control", placeholder="Digite o nome.", name="nome", data-ng-model="nome" )
+							
+				div(class="form-group col-sm-12")
+					label(for="componente_quantidade", class="col-sm-2 control-label") Numero:
+					div(class="col-sm-10")
+						input(type="text" class="form-control", placeholder="Digite o numero", name="num")
 
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Lista:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="lista")
-
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="showgeo")
-						
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-				
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
+				div(class="form-group col-sm-12")
+					label(for="componente_quantidade", class="col-sm-2 control-label") Lista:
+					div(class="col-sm-10")
+						input(type="checkbox", class="form-control", placeholder="Digite o numero", name="lista")
+			p 
+				div(id="novo_item")
 			
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-					
-	
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-			
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-		
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
-			
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-			
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-		
-					
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
-			
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-				
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-			
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-					
-			
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
-			
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-			
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-					
-			
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
-			
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Nome:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanome[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Numero:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listanumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Lat:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalatnumero[]")
-
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") Long:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" id="componente_referencia" placeholder="Modelo ou Referencia.", name="listalongnumero[]")
-	
-			div(class="form-group  col-sm-6")
-				label(for="componente_referencia", class="col-sm-2 control-label") KM:
-				div(class="col-sm-10")
-					input(type="text" class="form-control" i placeholder="kilometros.", name="listakm[]")
-			
-		
-			div(class="form-group col-sm-6")
-				label(for="componente_quantidade", class="col-sm-2 control-label") Show GEO:
-				div(class="col-sm-10")
-					input(type="checkbox" class="form-control" id="componente_quantidade" placeholder="Digite o numero", name="listashowgeo[]")
-			
-
-			div(class="form-group ")
-				label(for="componente_quantidade", class="col-sm-2 control-label") 
-				div(class="col-sm-10")
-
+			div(class="form-group")
+				div(class="col-sm-offset-2 col-sm-10")
+					a(href="#", class="btn btn-success", id="addItem") Adicionar Item
 			div(class="form-group")
 				div(class="col-sm-offset-2 col-sm-10")
 					button(type="submit", class="btn btn-success") Cadastrar

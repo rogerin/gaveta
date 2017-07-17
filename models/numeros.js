@@ -3,10 +3,13 @@ module.exports = function(app){
 
 	var Schema = mongoose.Schema;
 	var ObjectId = mongoose.Schema.Types.ObjectId;
-	var numero = new Schema({
-		nome: String,
-		desc: String,
+
+	var numeros = new Schema({
+		nome: { type: String, require: true },
+		desc: { type: String, default: ''},
 		num: String,
+		enederco: String,
+
 		list: [
 			{
 				nome: String,
@@ -23,5 +26,5 @@ module.exports = function(app){
 		created_at: {type: Date, default: Date.now}
 	});
 
-	return mongoose.model('Numeros', numero);
+	return mongoose.model('Numeros', numeros);
 }
